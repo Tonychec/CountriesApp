@@ -26,6 +26,16 @@ let package = Package(
                 .product(name: "Apollo", package: "apollo-ios"),
             ]
         ),
-        .testTarget(name: "CountriesDataTests", dependencies: ["CountriesData"]),
+        .testTarget(
+            name: "CountriesDataTests",
+            dependencies: [
+                "CountriesData",
+                "CountriesDomain",
+                "CountriesAPI",
+                // Builds generated data from JSON fixtures.
+                .product(name: "Apollo", package: "apollo-ios"),
+            ],
+            resources: [.copy("Fixtures")]
+        ),
     ]
 )

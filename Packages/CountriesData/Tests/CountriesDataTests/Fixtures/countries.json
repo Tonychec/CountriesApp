@@ -1,0 +1,50 @@
+{
+  "data": {
+    "countries": [
+      {
+        "__typename": "Country",
+        "code": "DE",
+        "emoji": "🇩🇪",
+        "continent": {
+          "__typename": "Continent",
+          "code": "EU",
+          "name": "Europe"
+        },
+        "name": "Germany"
+      },
+      {
+        "__typename": "Country",
+        "code": "DZ",
+        "emoji": "🇩🇿",
+        "continent": {
+          "__typename": "Continent",
+          "code": "AF",
+          "name": "Africa"
+        },
+        "name": "Algeria"
+      },
+      {
+        "__typename": "Country",
+        "code": "NE",
+        "emoji": "🇳🇪",
+        "continent": {
+          "__typename": "Continent",
+          "code": "AF",
+          "name": "Africa"
+        },
+        "name": "Niger"
+      },
+      {
+        "__typename": "Country",
+        "code": "NG",
+        "emoji": "🇳🇬",
+        "continent": {
+          "__typename": "Continent",
+          "code": "AF",
+          "name": "Africa"
+        },
+        "name": "Nigeria"
+      }
+    ]
+  }
+}

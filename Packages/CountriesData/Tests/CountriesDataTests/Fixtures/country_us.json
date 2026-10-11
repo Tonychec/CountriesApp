@@ -1,0 +1,24 @@
+{
+  "data": {
+    "country": {
+      "__typename": "Country",
+      "code": "US",
+      "emoji": "🇺🇸",
+      "continent": {
+        "__typename": "Continent",
+        "code": "NA",
+        "name": "North America"
+      },
+      "capital": "Washington D.C.",
+      "currency": "USD,USN,USS",
+      "languages": [
+        {
+          "__typename": "Language",
+          "code": "en",
+          "name": "English"
+        }
+      ],
+      "name": "United States"
+    }
+  }
+}

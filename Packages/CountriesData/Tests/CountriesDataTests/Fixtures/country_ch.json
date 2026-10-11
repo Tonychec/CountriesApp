@@ -1,0 +1,34 @@
+{
+  "data": {
+    "country": {
+      "__typename": "Country",
+      "code": "CH",
+      "emoji": "🇨🇭",
+      "continent": {
+        "__typename": "Continent",
+        "code": "EU",
+        "name": "Europe"
+      },
+      "capital": "Bern",
+      "currency": "CHE,CHF,CHW",
+      "languages": [
+        {
+          "__typename": "Language",
+          "code": "de",
+          "name": "German"
+        },
+        {
+          "__typename": "Language",
+          "code": "fr",
+          "name": "French"
+        },
+        {
+          "__typename": "Language",
+          "code": "it",
+          "name": "Italian"
+        }
+      ],
+      "name": "Switzerland"
+    }
+  }
+}
