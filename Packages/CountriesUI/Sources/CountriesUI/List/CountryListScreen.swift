@@ -40,7 +40,7 @@ private struct CountryList: View {
             }
         }
         .navigationDestination(for: CountrySummary.self) { country in
-            Text(country.name) // Replaced by the detail screen in commit 15.
+            CountryDetailScreen(country: country)
         }
         .task {
             await viewModel.loadInitial()

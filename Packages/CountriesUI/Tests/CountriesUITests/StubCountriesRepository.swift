@@ -3,13 +3,16 @@ import CountriesDomain
 /// A repository whose answers each test supplies as closures.
 struct StubCountriesRepository: CountriesRepository {
     var fetchCountries: @Sendable (String?) async throws(CountriesError) -> [CountrySummary] = { _ in [] }
+    var fetchCountry: @Sendable (String) async throws(CountriesError) -> CountryDetail = { _ throws(CountriesError) in
+        throw .unknown
+    }
 
     func countries(matching name: String?) async throws(CountriesError) -> [CountrySummary] {
         try await fetchCountries(name)
     }
 
-    func country(code _: String) async throws(CountriesError) -> CountryDetail {
-        throw .unknown
+    func country(code: String) async throws(CountriesError) -> CountryDetail {
+        try await fetchCountry(code)
     }
 }
 
