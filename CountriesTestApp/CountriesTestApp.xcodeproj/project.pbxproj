@@ -6,6 +6,12 @@
 	objectVersion = 90;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E78D4CC9307BEE7400F90D8C /* CountriesUI in Frameworks */ = {isa = PBXBuildFile; productRef = E78D4CC8307BEE7400F90D8C /* CountriesUI */; };
+		E78D4CCC307BEE8100F90D8C /* CountriesData in Frameworks */ = {isa = PBXBuildFile; productRef = E78D4CCB307BEE8100F90D8C /* CountriesData */; };
+		E78D4CCF307BEE8C00F90D8C /* CountriesDomain in Frameworks */ = {isa = PBXBuildFile; productRef = E78D4CCE307BEE8C00F90D8C /* CountriesDomain */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		000000000000000000000120 /* CountriesTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountriesTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -22,6 +28,9 @@
 		000000000000000130000000 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
+				E78D4CC9307BEE7400F90D8C /* CountriesUI in Frameworks */,
+				E78D4CCF307BEE8C00F90D8C /* CountriesDomain in Frameworks */,
+				E78D4CCC307BEE8100F90D8C /* CountriesData in Frameworks */,
 			);
 		};
 /* End PBXFrameworksBuildPhase section */
@@ -60,6 +69,11 @@
 				000000000000000000000010 /* CountriesTestApp */,
 			);
 			name = CountriesTestApp;
+			packageProductDependencies = (
+				E78D4CC8307BEE7400F90D8C /* CountriesUI */,
+				E78D4CCB307BEE8100F90D8C /* CountriesData */,
+				E78D4CCE307BEE8C00F90D8C /* CountriesDomain */,
+			);
 			productName = MyApp;
 			productReference = 000000000000000000000120 /* CountriesTestApp.app */;
 			productType = "com.apple.product-type.application";
@@ -88,6 +102,11 @@
 			);
 			mainGroup = 000000000000000000000001;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E78D4CC7307BEE7400F90D8C /* XCLocalSwiftPackageReference "../Packages/CountriesUI" */,
+				E78D4CCA307BEE8100F90D8C /* XCLocalSwiftPackageReference "../Packages/CountriesData" */,
+				E78D4CCD307BEE8C00F90D8C /* XCLocalSwiftPackageReference "../Packages/CountriesDomain" */,
+			);
 			preferredProjectObjectVersion = 90;
 			productRefGroup = 000000000000000000000020 /* Products */;
 			projectDirPath = "";
@@ -345,6 +364,36 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		E78D4CC7307BEE7400F90D8C /* XCLocalSwiftPackageReference "../Packages/CountriesUI" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Packages/CountriesUI;
+		};
+		E78D4CCA307BEE8100F90D8C /* XCLocalSwiftPackageReference "../Packages/CountriesData" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Packages/CountriesData;
+		};
+		E78D4CCD307BEE8C00F90D8C /* XCLocalSwiftPackageReference "../Packages/CountriesDomain" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Packages/CountriesDomain;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E78D4CC8307BEE7400F90D8C /* CountriesUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CountriesUI;
+		};
+		E78D4CCB307BEE8100F90D8C /* CountriesData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CountriesData;
+		};
+		E78D4CCE307BEE8C00F90D8C /* CountriesDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CountriesDomain;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 000000000000000000000000 /* Project object */;
 }
