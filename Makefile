@@ -1,4 +1,4 @@
-.PHONY: bootstrap format lint build test guards verify
+.PHONY: bootstrap format lint build test guards verify codegen
 
 PROJECT = CountriesTestApp/CountriesTestApp.xcodeproj
 SCHEME = CountriesTestApp
@@ -15,6 +15,10 @@ format:
 lint:
 	swiftlint lint --strict --quiet
 	swiftformat --lint .
+
+# Fetches the schema and regenerates Packages/CountriesData/Sources/CountriesAPI.
+codegen:
+	scripts/codegen.sh
 
 build:
 	$(XCODEBUILD) build

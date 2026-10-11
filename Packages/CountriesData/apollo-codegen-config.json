@@ -1,0 +1,45 @@
+{
+  "schemaNamespace": "CountriesAPI",
+  "schemaDownload": {
+    "downloadMethod": {
+      "introspection": {
+        "endpointURL": "https://countries.trevorblades.com/",
+        "httpMethod": {
+          "POST": {}
+        },
+        "includeDeprecatedInputValues": false,
+        "outputFormat": "SDL"
+      }
+    },
+    "downloadTimeout": 60,
+    "headers": [],
+    "outputPath": "./graphql/schema.graphqls"
+  },
+  "input": {
+    "schemaSearchPaths": [
+      "./graphql/schema.graphqls"
+    ],
+    "operationSearchPaths": [
+      "./graphql/**/*.graphql"
+    ]
+  },
+  "output": {
+    "schemaTypes": {
+      "path": "./Sources/CountriesAPI",
+      "moduleType": {
+        "other": {}
+      }
+    },
+    "operations": {
+      "inSchemaModule": {}
+    },
+    "testMocks": {
+      "none": {}
+    }
+  },
+  "options": {
+    "selectionSetInitializers": {
+      "operations": true
+    }
+  }
+}
