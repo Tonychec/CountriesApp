@@ -1,13 +1,11 @@
-import Apollo
 import CountriesAPI
 @testable import CountriesData
 import CountriesDomain
-import Foundation
 import Testing
 
 struct MappingTests {
     @Test func countriesMapToSummaries() async throws {
-        let data: CountriesQuery.Data = try await fixture("countries")
+        let data: CountriesQuery.Data = try await Fixture.data("countries")
 
         let summaries = data.countries.map(\.fragments.countryBasics.domainModel)
 
@@ -54,15 +52,7 @@ struct MappingTests {
     // MARK: - Helpers
 
     private func countryDetail(_ name: String) async throws -> CountryDetail {
-        let data: CountryDetailQuery.Data = try await fixture(name)
+        let data: CountryDetailQuery.Data = try await Fixture.data(name)
         return try #require(data.country).domainModel
-    }
-
-    /// Decodes `Fixtures/<name>.json`, a real API response, the same way Apollo parses network data.
-    private func fixture<Data: RootSelectionSet>(_ name: String) async throws -> Data {
-        let url = try #require(Bundle.module.url(forResource: name, withExtension: "json", subdirectory: "Fixtures"))
-        let response = try JSONSerialization.jsonObject(with: Foundation.Data(contentsOf: url)) as? [String: Any]
-        let data = try #require(response?["data"] as? [String: Any])
-        return try await Data(data: data)
     }
 }
