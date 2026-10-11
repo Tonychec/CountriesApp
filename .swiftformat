@@ -1,0 +1,16 @@
+# Language mode used by every target (PLAN.md §0).
+--swiftversion 6
+
+# Generated Apollo code is never hand-edited; build output is not ours.
+--exclude Packages/CountriesData/Sources/CountriesAPI,**/.build,**/DerivedData
+
+# Match SwiftLint's line_length warning so the two tools agree.
+--maxwidth 120
+
+# 4-space indentation, Xcode's default.
+--indent 4
+
+# Put each argument/parameter on its own line once a call or signature wraps.
+--wraparguments before-first
+--wrapparameters before-first
+--wrapcollections before-first

@@ -1,0 +1,34 @@
+# Generated Apollo code is never hand-edited; build output is not ours.
+excluded:
+  - Packages/CountriesData/Sources/CountriesAPI
+  - .build
+  - Packages/*/.build
+  - DerivedData
+
+# Lets `make lint` pass before any Swift file exists (commit 2) instead of erroring.
+allow_zero_lintable_files: true
+
+disabled_rules:
+  # SwiftFormat owns formatting; these rules disagree with its output.
+  - trailing_comma   # SwiftFormat's trailingCommas adds commas to multiline collections.
+  - opening_brace    # SwiftFormat's wrapMultilineStatementBraces moves `{` to its own line.
+
+opt_in_rules:
+  # Crash-prone shortcut; tests use `try #require(...)` instead.
+  - force_unwrapping
+  # Cheap, objective improvements.
+  - empty_count
+  - first_where
+  - sorted_first_last
+  - contains_over_first_not_nil
+  - redundant_nil_coalescing
+
+# Aligned with SwiftFormat's --maxwidth.
+line_length:
+  warning: 120
+  error: 160
+  ignores_urls: true
+
+# Short names like `id` or `i` are idiomatic in small scopes.
+identifier_name:
+  min_length: 1
