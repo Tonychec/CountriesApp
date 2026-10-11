@@ -2,7 +2,7 @@
 
 PROJECT = CountriesTestApp/CountriesTestApp.xcodeproj
 SCHEME = CountriesTestApp
-DESTINATION = platform=iOS Simulator,name=iPhone 17 Pro
+DESTINATION = platform=iOS Simulator,name=iPhone 18 Pro,OS=27.0
 XCODEBUILD = xcodebuild -project $(PROJECT) -scheme $(SCHEME) -destination '$(DESTINATION)' -quiet
 
 bootstrap:
