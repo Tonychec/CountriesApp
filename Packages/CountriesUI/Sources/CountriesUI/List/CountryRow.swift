@@ -16,6 +16,8 @@ struct CountryRow: View {
         layout {
             Text(country.emoji)
                 .font(.system(size: flagSize))
+                // The name follows; VoiceOver would otherwise say "flag: Germany, Germany".
+                .accessibilityHidden(true)
             VStack(alignment: .leading) {
                 Text(country.name)
                     .font(.body)

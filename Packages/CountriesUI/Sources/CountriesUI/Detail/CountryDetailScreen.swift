@@ -29,17 +29,19 @@ private struct CountryDetailContent: View {
                     VStack {
                         Text(detail.summary.emoji)
                             .font(.system(size: flagSize))
+                            .accessibilityHidden(true)
                         Text(detail.summary.name)
                             .font(.title.bold())
                             .multilineTextAlignment(.center)
+                            .accessibilityAddTraits(.isHeader)
                     }
                     .frame(maxWidth: .infinity)
                 }
                 Section {
-                    LabeledContent("Capital", value: detail.capital ?? "—")
-                    LabeledContent("Currencies", value: listed(detail.currencies))
-                    LabeledContent("Languages", value: listed(detail.languages.map(\.name)))
-                    LabeledContent("Continent", value: detail.summary.continent.name)
+                    LabeledContent("Capital") { value(detail.capital) }
+                    LabeledContent("Currencies") { value(listed(detail.currencies)) }
+                    LabeledContent("Languages") { value(listed(detail.languages.map(\.name))) }
+                    LabeledContent("Continent") { value(detail.summary.continent.name) }
                 }
             }
         }
@@ -53,8 +55,14 @@ private struct CountryDetailContent: View {
         }
     }
 
-    private func listed(_ values: [String]) -> String {
-        values.isEmpty ? "—" : values.formatted(.list(type: .and, width: .narrow))
+    /// Shows "—" for a missing value, which VoiceOver reads as "None" rather than "em dash".
+    private func value(_ text: String?) -> some View {
+        Text(text ?? "—")
+            .accessibilityLabel(text ?? "None")
+    }
+
+    private func listed(_ values: [String]) -> String? {
+        values.isEmpty ? nil : values.formatted(.list(type: .and, width: .narrow))
     }
 }
 
