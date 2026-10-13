@@ -1,5 +1,7 @@
 # Countries
 
+[![CI](https://github.com/Tonychec/CountriesApp/actions/workflows/ci.yml/badge.svg)](https://github.com/Tonychec/CountriesApp/actions/workflows/ci.yml)
+
 An iOS app for browsing countries from the public [Countries GraphQL API](https://countries.trevorblades.com),
 built with SwiftUI, Apollo iOS and local Swift packages.
 
@@ -42,6 +44,9 @@ Run `make test`, or in Xcode select the `CountriesData` or `CountriesUI` scheme 
 | `make test` | Runs every test on the iPhone 18 Pro simulator |
 | `make verify` | Build, lint, guards and tests in one go |
 | `make codegen` | Downloads the schema and regenerates the Apollo code. Only needed when the operations in `Packages/CountriesData/graphql/` change |
+
+GitHub Actions (`.github/workflows/ci.yml`) runs lint, guards, build and tests on every push to `main`
+and on pull requests, using the `xcode-27` runner (Xcode 27.0, iPhone 18 Pro simulator).
 
 ## Architecture
 
@@ -116,11 +121,9 @@ Run `make test`, or in Xcode select the `CountriesData` or `CountriesUI` scheme 
 - Pagination: the API returns all 250 countries at once.
 - UI and snapshot tests.
 - Localisation beyond English.
-- A CI pipeline.
 
 ## With more time
 
-- CI on GitHub Actions running build, lint, guards and tests.
 - UI tests for navigation and the main states.
 - Show the summary's flag and continent on the detail screen while the rest loads (today only the
   title does).
