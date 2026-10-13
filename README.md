@@ -23,7 +23,7 @@ built with SwiftUI, Apollo iOS and local Swift packages.
 ## Build and run
 
 1. Clone the repository.
-2. Open `Countries.xcworkspace` (it contains the app project and the three packages).
+2. Open `CountriesTestApp/CountriesTestApp.xcodeproj`. It references the three local packages in `Packages/`.
 3. Select the `CountriesTestApp` scheme and an iOS simulator, then Run (⌘R).
 
 Xcode resolves the Apollo package on first open. No API key or configuration is needed.
@@ -31,7 +31,10 @@ Xcode resolves the Apollo package on first open. No API key or configuration is 
 ### Tests
 
 The tests live in the packages (`CountriesDataTests`, `CountriesUITests`) and never touch the network.
-Run `make test`, or in Xcode select the `CountriesData` or `CountriesUI` scheme and press ⌘U.
+Run `make test` to run both packages' tests.
+
+To run them in Xcode, open the package itself (File › Open… › `Packages/CountriesData` or `Packages/CountriesUI`)
+and press ⌘U. The app project only builds the packages as dependencies, so ⌘U there finds no tests.
 
 ### Tooling
 
