@@ -1,4 +1,4 @@
-# Language mode used by every target (PLAN.md §0).
+# Language mode used by every target.
 --swiftversion 6
 
 # Generated Apollo code is never hand-edited; build output is not ours.

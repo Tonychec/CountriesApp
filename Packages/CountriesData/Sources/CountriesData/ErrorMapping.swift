@@ -2,7 +2,7 @@ import Apollo
 import CountriesDomain
 import Foundation
 
-/// Translates Apollo outcomes into `CountriesError`, the only error the repository throws (PLAN.md §1.9).
+/// Translates Apollo outcomes into `CountriesError`, the only error the repository throws.
 enum ErrorMapping {
     static func countriesError(from error: any Error) -> CountriesError {
         switch error {

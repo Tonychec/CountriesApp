@@ -20,7 +20,3 @@ playground.xcworkspace
 # Package.resolved is intentionally tracked so dependency versions are reproducible.
 .build/
 .swiftpm/
-
-PLAN.md
-
-RUNBOOK.md
